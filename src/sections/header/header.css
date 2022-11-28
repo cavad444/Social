@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+/*     background: #f3f3f3; */
+*{
+    font-size: 62.5%;
+    font-family: 'Ubuntu',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header-main-div{
+    display: grid;
+    grid-template-columns: 1.1fr 3fr 2fr;
+    padding: 1rem;
+    background-color: #f3f3f3;
+    height:100vh;
+}
+/* MENU SECTION BEGINS */
+.menu-section{
+    padding-top: 2rem;
+    height: 100%;
+    /* border-right: 0.1rem solid black;
+    height: 100%; */
+    box-shadow: 5px 0 3px -3px #888;
+    font-weight: lighter;
+
+}
+.instagram-logo{
+    height: 4rem;
+    
+}
+.header-section-1-li{
+    list-style:none;
+    font-size: 1.9rem;
+    display: flex;
+}
+.header-icon{
+    font-size: 2.4rem;
+    margin-right: 2rem;
+}
+.message-icon{
+    color: #28282B;
+    
+}
+.menu-section-ul{
+    display: flex;
+    flex-direction:column;
+    gap: 4.2rem;
+}
+.menu-links{
+    text-decoration:none;
+    font-size: 1.9rem;
+    color: black;
+}
+/* MENU SECTION ENDS */
+
+
+/* MIDDLE SECTION BEGINS */
+.header-middle-section{
+    display: flex;
+    justify-content: center;
+}
+.middle-main-image{
+    height: 100%;
+    object-fit: cover;
+}
+.cart-top-section-texts-images{
+display: flex;
+gap: 1.2rem;
+
+}
+.middle-pp-image{
+    height: 2.4rem;
+    border-radius: 50%;
+}
+.middle-cart{
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    width: 40rem;
+}
+.cart-username{
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.cart-location{
+    font-size: 1.2rem;
+}
+.cart-main-texts{
+    display: flex;
+    flex-direction:column;
+    gap: 0 rem;
+}
+.cart-top-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    height: 4rem;
+    padding: 0.6rem;
+    
+}
+.three-dots{
+    display: flex;
+    align-self: center;
+    font-size: 2.4rem;
+    justify-content: center;
+}
+/* middle section ends */
+
+/* follow section begins */
+.header-follow-section{
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    gap: 2rem;
+    margin-top: 7rem;
+}
+.switch-section-div{
+    display: flex;
+    justify-content: space-between;
+}
+.cart-fullname{
+    font-style: italic;
+    font-weight: lighter;
+    color: #B1B1B1;
+    font-size: 1.2rem;
+}
+.switch-accounts-img-text{
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+.follow-section-texts{
+    display: flex;
+    flex-direction: column;
+   
+
+}
+.right-section-pp{
+    height: 6rem;
+    border-radius: 50%;
+}
+
+.follow-section-link{
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: blue;
+}
+
+.switch-button-part{
+    display: flex;
+    align-items: center;
+}
+    /* switch section ends */
+
+.follow-section-suggestions-text{
+    display: flex;
+    justify-content: space-between;
+}
+.follow-section-suggestions-text span,p{
+    font-size: 1.4rem;
+}
+.follow-section-suggestions-text span{
+    color: #868e96;
+    font-weight: bold;
+}
+/* follow section last part */
+.right-section-last-pp{
+    height:3rem ;
+    border-radius: 50%;
+}
+.follow-section-last-part{
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
