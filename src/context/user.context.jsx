@@ -1,6 +1,18 @@
 import {createContext, useState } from "react";
 import USER_DATA from './user-data.json';
 
+// const INITIAL_STATE = {
+//     currentUser:'',
+//     users:[],
+//     userLoggedIn:false,
+//     logMessage:'',
+//     usernameValue:' ',
+//     passwordValue:' ',
+// }
+
+// function userReducer(){
+//     switch
+// }
 
 export const UserContext = createContext({
     users:[],
