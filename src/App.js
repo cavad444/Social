@@ -3,6 +3,7 @@ import Header from "./sections/header/header";
 import Login from './navigations/login/login';
 import SignUp from './navigations/login/sign-up';
 import InstagramLogo from './instagram-logo/instagram-logo';
+import Profile from './navigations/profile/profile';
 function App() {
   return (
     <div className='App'>
@@ -11,6 +12,7 @@ function App() {
       <Route path='/' element={<InstagramLogo/>}>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<SignUp/>}/>
+        <Route path='/profile' element={<Profile/>}/>
       </Route>
     </Routes>
     </div>

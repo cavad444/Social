@@ -13,7 +13,7 @@ function HeaderMenu(){
                     <li className='header-section-1-li'><FontAwesomeIcon className='header-icon message-icon' icon={faMessage} />  Messages</li>
                     <li className='header-section-1-li'><FontAwesomeIcon className='header-icon message-icon' icon={faHeart} />  Notification</li>
                     <li className='header-section-1-li'><FontAwesomeIcon className='header-icon message-icon' icon={faSquarePlus} />  Create</li>
-                    <li className='header-section-1-li'><FontAwesomeIcon className='header-icon message-icon' icon={faUser} />  Profile</li>
+                    <li className='header-section-1-li'><FontAwesomeIcon className='header-icon message-icon' icon={faUser} />  <Link to='/profile' className='menu-links'>  Profile</Link></li>
                     <li className='header-section-1-li'><FontAwesomeIcon className='header-icon message-icon' icon={faListUl} />  More</li>
                 </ul>
             </section>

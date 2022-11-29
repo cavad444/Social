@@ -4,7 +4,7 @@ import { UserContext } from '../../context/user.context';
 import Salam from './salam';
 import './login.css'
 function LoginComponent(){
-    const {logMessage,userLoggedIn,users,logUserIn,usernameValue,passwordValue,changeUsernameValue,changePasswordValue,currentUser} = useContext(UserContext);
+    const {userLoggedIn,users,logUserIn,usernameValue,passwordValue,changeUsernameValue,changePasswordValue,currentUser} = useContext(UserContext);
     // const userPassword = document.querySelector('.login-username').value;
     // console.log(userPassword);
     return(

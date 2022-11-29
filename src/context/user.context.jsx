@@ -17,7 +17,6 @@ import USER_DATA from './user-data.json';
 export const UserContext = createContext({
     users:[],
     userLoggedIn:false,
-    logMessage:'',
     logUserIn:()=>{},
     usernameValue:' ',
     passwordValue:' ',
@@ -28,7 +27,6 @@ export const UserContext = createContext({
 function UserProvider({children}){
     const [users,setUsers] = useState(USER_DATA);
     const [userLoggedIn,setUserLoggedIn] = useState(false);
-    const [logMessage,setLogMessage] = useState('');
     const [usernameValue,setUsernameValue] = useState('');
     const [passwordValue,setPasswordValue] = useState('');
     const [currentUser,setCurrentUser] = useState('');
