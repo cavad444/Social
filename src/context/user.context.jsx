@@ -1,5 +1,6 @@
 import {createContext, useState } from "react";
 import USER_DATA from './user-data.json';
+import { useNavigate } from "react-router-dom";
 
 // const INITIAL_STATE = {
 //     currentUser:'',
@@ -38,7 +39,7 @@ function UserProvider({children}){
     function changePasswordValue(e){
        setPasswordValue(e.target.value);
     };
-
+    const navigate = useNavigate();
     function logUserIn(passwordValue,usernameValue){
         const existingUser = users.find(
             (user)=>user.user_name === usernameValue && user.password === passwordValue
@@ -48,6 +49,7 @@ function UserProvider({children}){
             setUserLoggedIn(true);
             alert('logged in');
             setCurrentUser(usernameValue);
+            navigate('/');
         }else{
             alert('cannot logged in');
         }
