@@ -1,6 +1,8 @@
 import {createContext, useState } from "react";
 import USER_DATA from './user-data.json';
 import { useNavigate } from "react-router-dom";
+import db from '../firebase/firebase-config';
+import { addDoc } from "firebase/firestore";
 
 // const INITIAL_STATE = {
 //     currentUser:'',
@@ -41,18 +43,18 @@ function UserProvider({children}){
     };
     const navigate = useNavigate();
     function logUserIn(passwordValue,usernameValue){
-        const existingUser = users.find(
-            (user)=>user.user_name === usernameValue && user.password === passwordValue
-        ); 
-        if(existingUser){
+        // const existingUser = users.find(
+        //     (user)=>user.user_name === usernameValue && user.password === passwordValue
+        // ); 
+        // if(existingUser){
             
-            setUserLoggedIn(true);
-            alert('logged in');
-            setCurrentUser(usernameValue);
-            navigate('/');
-        }else{
-            alert('cannot logged in');
-        }
+        //     setUserLoggedIn(true);
+        //     alert('logged in');
+        //     setCurrentUser(usernameValue);
+        //     navigate('/');
+        // }else{
+        //     alert('cannot logged in');
+        // }
     }
 
     const value = {users,userLoggedIn,logUserIn,usernameValue,passwordValue,changeUsernameValue,changePasswordValue,currentUser};

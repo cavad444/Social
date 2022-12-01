@@ -9,9 +9,8 @@
 }
 .header-main-div{
     display: grid;
-    grid-template-columns: 1.1fr 3fr 2fr;
+    grid-template-columns:  5fr 2fr;
     padding: 1rem;
-    background-color: #f3f3f3;
     height:100vh;
 }
 /* MENU SECTION BEGINS */
@@ -22,6 +21,8 @@
     height: 100%; */
     box-shadow: 5px 0 3px -3px #888;
     font-weight: lighter;
+    position: fixed;
+    z-index: 1;
 
 }
 .instagram-logo{
@@ -57,7 +58,9 @@
 /* MIDDLE SECTION BEGINS */
 .header-middle-section{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 1.4rem;
+    align-items: center;
 }
 .middle-main-image{
     height: 100%;
@@ -115,6 +118,7 @@ gap: 1.2rem;
     width: 40rem;
     gap: 2rem;
     margin-top: 7rem;
+    
 }
 .switch-section-div{
     display: flex;

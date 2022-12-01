@@ -6,11 +6,15 @@ export const ProfileContext = createContext({
     changeDescriptionValue:()=>{},
     changeImageUrlValue:()=>{},
     changeLocationValue:()=>{},
+    addNewCart:false,
 })
 function ProfileProvider({children}){
     const [imageUrl,setImageUrl] = useState('');
     const [description,setDescription] = useState('');
     const [location ,setLocation] = useState('');
+    const [addNewCart,setAddNewCart] = useState(false);
+  
+
     function changeImageUrlValue(e){
         setImageUrl(e.target.value);
     }
@@ -20,7 +24,11 @@ function ProfileProvider({children}){
     function changeLocationValue(e){
         setLocation(e.target.value);
     }
-    const value = {imageUrl,description,location,changeDescriptionValue,changeImageUrlValue,changeLocationValue};
+
+    function addToProfileSection(){
+        setAddNewCart(true);
+    }
+    const value = {imageUrl,description,location,changeDescriptionValue,changeImageUrlValue,changeLocationValue,addNewCart};
     return(
         <ProfileContext.Provider value={value}>{children}</ProfileContext.Provider>
     )
