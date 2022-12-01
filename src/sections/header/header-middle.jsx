@@ -1,15 +1,11 @@
-import { db } from "../../firebase/firebase-config";
-import {collection,getDocs} from 'firebase/firestore';
 import {useEffect,useState} from 'react';
+import { CartContext } from "../../context/cartContext";
+import { useContext } from "react";
+
 function HeaderMiddle(){
-    const [carts,setCarts] = useState([]);
-    const cartsCollectionRef = collection(db,'cart');
+    
+    const {carts,getCarts} = useContext(CartContext);
     useEffect(()=>{
-        async function getCarts(){
-            const data = await getDocs(cartsCollectionRef);
-            console.log(data);
-            setCarts(data.docs.map((doc) => ({...doc.data(),id:doc.id}))); 
-        };
         getCarts();
     },[]);
 

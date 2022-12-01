@@ -12,12 +12,12 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
+      <CartProvider>
         <ProfileProvider>
-          <CartProvider>
             <App />
-          </CartProvider>
         </ProfileProvider>
-      </UserProvider>
+      </CartProvider>
+    </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
