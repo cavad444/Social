@@ -10,7 +10,7 @@ function HeaderFollow(){
             <div className="switch-accounts-img-text">
                 <img className="right-section-pp" src="/images/pp.jpg" alt="" />
                 <div className="follow-section-texts">
-                <span className="cart-username">{currentUser}</span>
+                <span className="cart-username">ca.v.ad</span>
                 <p className="cart-fullname">Cavad Manafov</p>
                 </div>
             </div>

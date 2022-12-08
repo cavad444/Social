@@ -1,26 +1,52 @@
-import { Link } from 'react-router-dom';
-import { useContext, useEffect } from 'react';
-import { UserContext } from '../../context/user.context';
-import Salam from './salam';
+import { Link, useNavigate } from 'react-router-dom';
+import { useContext,useState } from 'react';
+import { signInAuthUserWithEmailAndPassword } from '../../firebase/firebase-config';
 import './login.css'
+const defaultFormFields = {
+    email:'',
+    password:'',
+};
 function LoginComponent(){
-    
-    const {userLoggedIn,users,logUserIn,usernameValue,passwordValue,changeUsernameValue,changePasswordValue,currentUser,getUsers} = useContext(UserContext);
-    // const userPassword = document.querySelector('.login-username').value;
-    // console.log(userPassword);
-    useEffect(()=>{
-        getUsers();
-    },[]);
+    const [formFields,setFormFields] = useState(defaultFormFields);
+    const {email,password} = formFields;
+    function resetFormFields(){
+        setFormFields(defaultFormFields);
+    }
+
+    function handleChange(event){
+        const{name,value} = event.target;
+        setFormFields({...formFields,[name]:value});
+        }
+        const navigate = useNavigate();
+    async function handleSubmit(e){
+        e.preventDefault();
+        try{
+           const {user} = await signInAuthUserWithEmailAndPassword(email,password);
+            resetFormFields();
+            navigate('/');
+        }catch(err){
+            switch(err.code){
+                case 'auth/wrong-password':
+                    alert('Incorrect password for email');
+                    break;
+                case 'auth/user-not-found':
+                    alert('No user found with this email');
+                    break;
+                default:
+                    console.log(err);
+            }
+
+        }
+         }
     return(
     <div className="login-div">
         <h1 className='login-login'>Login</h1>
-        <form onSubmit={e=>e.preventDefault()} align="center" className="login-form">
-            <span className='email-text'>Your email or username</span> 
-            <input required onChange={(e)=>changeUsernameValue(e)} value={usernameValue} placeholder='Enter your username' className='login-input login-username' type="text" />
-            <span className='password-text'>Your password</span>
-            <input required onChange={(e)=>changePasswordValue(e)} value={passwordValue} placeholder='Enter your password' className='login-input login-password' type="password" />
-            <input onClick={()=>logUserIn(passwordValue,usernameValue)} value='Login' className='login-button' type="submit" />
-            {userLoggedIn && currentUser}
+        <form onSubmit={handleSubmit} align="center" className="login-form">
+            <span className='email-text'>Your email </span> 
+            <input required value={email} onChange={handleChange} name="email" placeholder='Enter your email' className='login-input login-username' type="email" />
+            <span className='email-text'>Your email </span> 
+            <input required value={password} onChange={handleChange} name="password"  placeholder='Enter 6 caracter or more' className='login-input login-password' type="password" />
+            <button className="login-button" type="submit">Log in</button>
         </form>
         <p className='create-an-account'>Don`t have an account?<Link className='sign-up-plz' to='/register'>Sign Up</Link></p>
         
